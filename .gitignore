@@ -1,0 +1,10 @@
+*
+!*/
+!*.sh
+!*.tcsh
+!*.m
+!*.py
+!*.md
+!.gitignore
+abin*
+._*
