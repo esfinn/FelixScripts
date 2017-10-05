@@ -10,7 +10,7 @@ set here = $PWD
 set top_dir   = /data/CMI/MRI/RU/
 
 # set subject and group identifiers
-set subj      = NDARAA075AMK
+set subj      = NDARAC904DMU
 set group_id  = hc
 
 set ref_base = /data1/software/afni_16.3.05/TT_N27+tlrc
@@ -23,7 +23,7 @@ afni_proc.py -subj_id $subj                                                 \
         -copy_anat $top_dir/$subj/${subj}_T1w_MEMPRAGE_SAG_RMS.nii.gz \
         -tcat_remove_first_trs 0                                            \
         -dsets                                                              \
-            $top_dir/$subj/${subj}_Movie_Present.nii.gz        \
+            $top_dir/$subj/func/${subj}_Movie_Present.nii.gz        \
         -tlrc_base $ref_base                                    \
         -volreg_align_to MIN_OUTLIER                               \
         -volreg_align_e2a                                          \
