@@ -22,6 +22,7 @@ afni_proc.py -subj_id $subj                                                 \
         -blur_size 5 \
         -surf_anat /data/finnes/CMI/scripts/freesurfer/$subj/SUMA/${subj}_SurfVol.nii \
         -surf_spec /data/finnes/CMI/scripts/freesurfer/$subj/SUMA/${subj}_?h.spec \
+	# use this line next time (for standard mesh): -surf_spec /data/finnes/CMI/scripts/freesurfer/$subj/SUMA/${subj}_?h.spec \
         -regress_motion_per_run                                    \
 	-regress_censor_motion 0.3                                 \
         -regress_censor_outliers 0.1                               \

@@ -3,6 +3,8 @@
 # created by uber_subject.py: version 0.39 (March 21, 2016)
 # creation date: Tue Oct 18 15:21:40 2016
 
+module load afni
+
 for subj in $@
 do
 
@@ -10,8 +12,9 @@ do
 afni_proc.py -subj_id $subj                                                 \
         -script /data/finnes/CMI/scripts/proc.$subj -scr_overwrite                                   \
 	-out_dir /data/finnes/CMI/preprocessed_data/$subj.results                                    \
-        -blocks despike align volreg surf blur scale regress                 \
-        -copy_anat /data/CMI/MRI/RU/$subj/anat/${subj}_T1w_MEMPRAGE_SAG_RMS.nii.gz \
+        -blocks despike align volreg blur scale regress                 \
+        -copy_anat /data/finnes/CMI/scripts/freesurfer/$subj/SUMA/${subj}_SurfVol.nii  \
+	-anat_has_skull yes \
         -anat_follower_ROI aaseg anat aparc.a2009s+aseg.nii        \
                   -anat_follower_ROI aeseg epi /data/finnes/CMI/scripts/singlesub_preprocessing/freesurfer/$subj/SUMA/aparc.a2009s+aseg.nii        \
                   -anat_follower_ROI FSvent epi /data/finnes/CMI/scripts/singlesub_preprocessing/freesurfer/$subj/SUMA/FT_vent.nii                  \
@@ -23,8 +26,6 @@ afni_proc.py -subj_id $subj                                                 \
         -volreg_align_to MIN_OUTLIER                               \
         -volreg_align_e2a                                          \
         -blur_size 5 \
-        -surf_anat /data/finnes/CMI/scripts/singlesub_preprocessing/freesurfer/$subj/SUMA/${subj}_SurfVol.nii \
-        -surf_spec /data/finnes/CMI/scripts/singlesub_preprocessing/freesurfer/$subj/SUMA/${subj}_?h.spec \
         -regress_motion_per_run                                    \
 	-regress_ROI_PC FSvent 3                                   \
         -regress_make_corr_vols aeseg FSvent                       \
