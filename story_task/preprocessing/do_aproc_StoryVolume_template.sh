@@ -33,9 +33,9 @@ afni_proc.py -subj_id $subj                                                 \
     		-anat_follower_ROI FSWMe  epi  $fsindir/$fswm                       \
     		-anat_follower_erode FSvent FSWMe                                   \
         -dsets \
-		/$topdir/$subj/${subj}_func_Story1.nii.gz[0-526]            \
-		/$topdir/$subj/${subj}_func_Story2.nii.gz[0-451]            \
-		/$topdir/$subj/${subj}_func_Story3.nii.gz[0-331]            \
+		/$topdir/$subj/${subj}_func_Story1_crop.nii.gz            \
+		/$topdir/$subj/${subj}_func_Story2_crop.nii.gz            \
+		/$topdir/$subj/${subj}_func_Story3_crop.nii.gz            \
         -tcat_remove_first_trs 0                                            \
 	-align_opts_aea -giant_move 					    \
 	-tlrc_base TT_N27+tlrc                                              \
