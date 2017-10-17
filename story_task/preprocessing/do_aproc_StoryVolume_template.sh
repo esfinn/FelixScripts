@@ -18,8 +18,8 @@ outdir=$topdir/$subj
 
 # Input data: FreeSurfer results - anatomy, ventricle and WM maps
 fsanat=${subj}_SurfVol.nii
-fsvent=FT_vent.nii
-fswm=FT_WM.nii
+fsvent=FSmask_vent.nii
+fswm=FSmask_WM.nii
 
 # run afni_proc.py to create a single subject processing script
 afni_proc.py -subj_id $subj                                                 \

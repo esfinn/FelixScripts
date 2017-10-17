@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# created by uber_subject.py: version 0.39 (March 21, 2016)
-# creation date: Tue Oct 18 15:21:40 2016
-
 module load afni
 
 data_dir=/data/finnes/story_task/
@@ -18,9 +15,9 @@ afni_proc.py -subj_id $subj                                                 \
         -blocks despike align volreg surf blur scale regress                 \
         -copy_anat /data/finnes/story_task/preprocessing/freesurfer/$subj/SUMA/${subj}_SurfVol.nii     \
         -dsets \
-		/data/finnes/story_task/$subj/${subj}_func_Story1.nii.gz[0-526]        \
-		/data/finnes/story_task/$subj/${subj}_func_Story2.nii.gz[0-451]        \
-		/data/finnes/story_task/$subj/${subj}_func_Story3.nii.gz[0-331]        \
+		/data/finnes/story_task/$subj/${subj}_func_Story1_crop.nii.gz        \
+		/data/finnes/story_task/$subj/${subj}_func_Story2_crop.nii.gz        \
+		/data/finnes/story_task/$subj/${subj}_func_Story3_crop.nii.gz        \
         -tcat_remove_first_trs 0                                            \
 	-align_opts_aea -giant_move \
         -volreg_align_to MIN_OUTLIER                               \
