@@ -5,17 +5,19 @@
 
 module load afni
 
+task=Movie_DosMe
+
 for subj in $@
 do
 
 # run afni_proc.py to create a single subject processing script
 afni_proc.py -subj_id $subj                                                 \
-        -script /data/finnes/CMI/scripts/proc.$subj -scr_overwrite                                   \
-	-out_dir /data/finnes/CMI/preprocessed_data/Movie_DosMe/$subj.results                                    \
-        -blocks despike align volreg surf blur scale regress                 \
-        -copy_anat /data/CMI/MRI/RU/$subj/anat/${subj}_T1w_MEMPRAGE_SAG_RMS.nii.gz      \
+        -script /data/finnes/CMI/scripts/proc.$subj -scr_overwrite      		 \
+	-out_dir /data/finnes/CMI/preprocessed_data/Movie_DosMe/$subj.$task.surfResults  \
+        -blocks despike align volreg surf blur scale regress                 		 \
+        -copy_anat /data/CMI/MRI/RU/$subj/anat/${subj}_T1w_MEMPRAGE_SAG_RMS.nii.gz       \
         -dsets /data/CMI/MRI/RU/$subj/func/${subj}_Movie_DosMe.nii.gz        \
-        -tcat_remove_first_trs 0                                            \
+        -tcat_remove_first_trs 0                                             \
 	-align_opts_aea -giant_move \
         -volreg_align_to MIN_OUTLIER                               \
         -volreg_align_e2a                                          \

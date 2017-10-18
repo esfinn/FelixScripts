@@ -25,26 +25,21 @@ then
 
 s2=${subjlist[$j-1]}
 
-echo $s1
-echo $s2
+echo $s1 $s2
 
 # check to see if file already exists
 
 file_name=$top_dir/isc_analysis/pairwise_iscMaps/${s1}_${s2}_StoryAll_volResults_errts.fanaticor+tlrc.HEAD
 
-if [ -e $file_name ]
-then
-    echo Exists
-else
+# if [ -e $file_name ]
+# then
+#    echo Exists
+# else
 
 # if not, create it
-3dTcorrelate \
--prefix $file_name \
--automask \
--polort -1 \
-$top_dir/${s1}/${s1}.StoryAll.volResults/errts.${s1}.fanaticor+tlrc.HEAD $top_dir/${s2}/${s2}.StoryAll.volResults/errts.${s2}.fanaticor+tlrc.HEAD 
+echo "3dTcorrelate -prefix $file_name -automask -polort -1 $top_dir/${s1}/${s1}.StoryAll.volResults/errts.${s1}.fanaticor+tlrc.HEAD $top_dir/${s2}/${s2}.StoryAll.volResults/errts.${s2}.fanaticor+tlrc.HEAD" >> Tcorrelate_pairs.txt
 
-fi
+# fi
 fi
 
 done
