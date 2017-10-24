@@ -24,9 +24,10 @@ then
 
 echo Doing ${s1} and ${s2}
 
-filename=$topdir/isc_analysis/pairwise_iscMaps/${s1}_${s2}_StoryAll.volResults_errts.fanaticor+tlrc.HEAD
+filename=$topdir/isc_analysis/pairwise_iscMaps/${s1}_${s2}_StoryAll.volResults_errts.fanaticor_TTN27mask+tlrc.HEAD
 
-echo ${s1} ${s2} $filename >> data_n22.txt
+# for making 
+# echo ${s1} ${s2} $filename >> data_n22.txt
 
 if [ -e $filename ]
 then
@@ -34,7 +35,7 @@ then
 echo ${s1} and ${s2} already exists
 
 else
-echo 3dTcorrelate -prefix $filename -polort -1 -automask $topdir/$s1/${s1}.StoryAll.volResults/errts.${s1}.fanaticor+tlrc.HEAD $topdir/$s2/${s2}.StoryAll.volResults/errts.${s2}.fanaticor+tlrc.HEAD >> Tcorrelate_pairs.txt
+echo 3dTcorrelate -prefix $filename -polort -1 $topdir/$s1/${s1}.StoryAll.volResults/errts.${s1}.fanaticor+tlrc.HEAD $topdir/$s2/${s2}.StoryAll.volResults/errts.${s2}.fanaticor+tlrc.HEAD >> Tcorrelate_pairs_noAutomask.txt
 
 fi
 fi
