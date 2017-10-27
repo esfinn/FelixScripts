@@ -26,18 +26,18 @@ subj_list = {'tb2994';
 'tb4572';
 };
 
-seed_list = {'lTmpPole'}; %'rACC';'dmPFC';'lPrecun';'rAngGyr';'lLOC'};
+seed_list = {'lpsts', 'lPlanumTmp'}; %'rACC';'dmPFC';'lPrecun';'rAngGyr';'lLOC'};
 
-data = struct;
+data_OneGrp = struct;
 
 for ss = 1:length(subj_list)
     for seed = 1:length(seed_list)
-        tmp = importdata([seed_list{seed},'_p01_',subj_list{ss},'.StoryAll.volResults.txt']);
-        data.(seed_list{seed})(:,ss) = tmp;
+        tmp = importdata([seed_list{seed},'_',subj_list{ss},'.StoryAll.volResults.txt']);
+        data_OneGrp.(seed_list{seed})(:,ss) = tmp;
     end
 end
 
-save('ISClTmpPole_p01_indiv_subj_ts.mat','data')
+save('ISC_OneGrp_indiv_subj_ts.mat','data_OneGrp')
 
 
 
