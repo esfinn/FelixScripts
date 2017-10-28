@@ -3,7 +3,7 @@
 module load afni
 
 # for seed in lTmpPole rACC dmPFC lPrecun rAngGyr lLOC
-for seed in lpsts lPlanumTmp
+for seed in lHeschlGyr_med lHeschlGyr_lat
 do
 
 echo $seed

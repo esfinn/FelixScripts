@@ -26,7 +26,7 @@ subj_list = {'tb2994';
 'tb4572';
 };
 
-seed_list = {'lpsts', 'lPlanumTmp'}; %'rACC';'dmPFC';'lPrecun';'rAngGyr';'lLOC'};
+seed_list = {'lHeschlGyr_med', 'lHeschlGyr_lat','lpsts','lPlanumTmp'}; %'rACC';'dmPFC';'lPrecun';'rAngGyr';'lLOC'};
 
 data_OneGrp = struct;
 
