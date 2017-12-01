@@ -3,7 +3,7 @@
 module load afni
 module load freesurfer/6.0.0
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
-export SUBJECTS_DIR=/data/finnes/CMI/scripts/singlesub_preprocessing/freesurfer/
+export SUBJECTS_DIR=/data/finnes/CMI/scripts/freesurfer/
 
 for aS in $@
 do
