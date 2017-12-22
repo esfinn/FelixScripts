@@ -24,11 +24,11 @@ cd $topdir/preprocessed_data/Movie_Present/${subj}.Movie_Present.volResults/
     -stim_file 10 motion_deriv.1D'[3]' -stim_base 10 -stim_label 10 dS_02  \
     -stim_file 11 motion_deriv.1D'[4]' -stim_base 11 -stim_label 11 dL_02  \
     -stim_file 12 motion_deriv.1D'[5]' -stim_base 12 -stim_label 12 dP_02  \
-    -stim_file 13 $topdir/feature_analysis/mirRMS_HRFconvolved.txt -stim_label 13 mirRMS \
-    -fout -tout -x1D XplusmirRMS.xmat.1D -xjpeg XplusmirRMS.jpg                                \
-    -x1D_uncensored XplusmirRMS.nocensor.xmat.1D                                     \
-    -fitts fitts.mirRMS.${subj}                                                     \
-    -errts errts.mirRMS.${subj}                                                   \
-    -bucket stats.mirRMS.${subj} \
+    -stim_file 13 $topdir/feature_analysis/meanGrayLevels_HRFconvolvedv3.txt -stim_label 13 meanGrayLevels_v3 \
+    -fout -tout -x1D XplusMeanGrayLevelsv3.xmat.1D -xjpeg XplusMeanGrayLevelsv3.jpg                                \
+    -x1D_uncensored XplusMeanGrayLevelsv3.nocensor.xmat.1D                                     \
+    -fitts fitts.MeanGrayLevelsv3.${subj}                                                     \
+    -errts errts.MeanGrayLevelsv3.${subj}                                                   \
+    -bucket stats.MeanGrayLevelsv3.${subj} \
     -jobs 12 
 done
