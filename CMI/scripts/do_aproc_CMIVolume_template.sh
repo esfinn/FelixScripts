@@ -4,7 +4,7 @@ module load afni
 
 # Set top level directory structure
 topdir=/data/finnes/CMI/
-task=Movie_Present
+task=Movie_DespMe
 fsroot=$topdir/scripts/freesurfer/
 
 for subj in $@
@@ -22,7 +22,7 @@ afni_proc.py -subj_id $subj                                                 \
                   -anat_follower_ROI FSvent epi /data/finnes/CMI/scripts/freesurfer/$subj/SUMA/FSmask_vent.nii                  \
                   -anat_follower_ROI FSWMe epi /data/finnes/CMI/scripts/freesurfer/$subj/SUMA/FSmask_WM.nii                   \
                   -anat_follower_erode FSvent FSWMe                           \
-        -dsets /data/CMI/MRI/RU/$subj/func/${subj}_Movie_Present.nii.gz        \
+        -dsets /data/CMI/MRI/RU/$subj/func/${subj}_Movie_DosMe.nii.gz        \
         -tcat_remove_first_trs 0                                            \
 	-align_opts_aea -giant_move 					    \
 	-tlrc_base $topdir/HaskinsPeds_NL_template1.0+tlrc.HEAD             \
