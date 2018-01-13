@@ -11,7 +11,7 @@ cd $topdir/preprocessed_data/Movie_Present/${subj}.Movie_Present.volResults/
     -censor censor_${subj}_combined_2.1D                                   \
     -ortvec ROIPC.FSvent.1D ROIPC.FSvent                                     \
     -polort 2 -float                                                       \
-    -num_stimts 13                                                         \
+    -num_stimts 15                                                         \
     -stim_file 1 motion_demean.1D'[0]' -stim_base 1 -stim_label 1 roll_01  \
     -stim_file 2 motion_demean.1D'[1]' -stim_base 2 -stim_label 2 pitch_01 \
     -stim_file 3 motion_demean.1D'[2]' -stim_base 3 -stim_label 3 yaw_01   \
@@ -24,11 +24,13 @@ cd $topdir/preprocessed_data/Movie_Present/${subj}.Movie_Present.volResults/
     -stim_file 10 motion_deriv.1D'[3]' -stim_base 10 -stim_label 10 dS_02  \
     -stim_file 11 motion_deriv.1D'[4]' -stim_base 11 -stim_label 11 dL_02  \
     -stim_file 12 motion_deriv.1D'[5]' -stim_base 12 -stim_label 12 dP_02  \
-    -stim_file 13 $topdir/feature_analysis/meanGrayLevels_HRFconvolved.txt -stim_label 13 meanGrayLevels \
-    -fout -tout -x1D XplusMeanGrayLevels.xmat.1D -xjpeg XplusMeanGrayLevels.jpg                                \
-    -x1D_uncensored XplusMeanGrayLevels.nocensor.xmat.1D                                     \
-    -fitts fitts.MeanGrayLevels.${subj}                                                     \
-    -errts errts.MeanGrayLevels.${subj}                                                   \
-    -bucket stats.MeanGrayLevels.${subj} \
+    -stim_file 13 $topdir/feature_analysis/mirRMS_HRFconvolved.txt -stim_label 13 mirRMS \
+    -stim_file 14 $topdir/feature_analysis/meanGrayLevels_HRFconvolved.txt -stim_label 14 meanGrayLevel \
+    -stim_file 15 $topdir/feature_analysis/faceDetect0.5_boxcar_HRFconv.txt -stim_label 15 faceDetect \
+    -fout -tout -x1D XplusAudLumFace.xmat.1D -xjpeg XplusAudLumFace.jpg                                \
+    -x1D_uncensored XplusAudLumFace.nocensor.xmat.1D                                     \
+    -fitts fitts.AudLumFace.${subj}                                                     \
+    -errts errts.AudLumFace.${subj}                                                   \
+    -bucket stats.AudLumFace.${subj} \
     -jobs 12 
 done
