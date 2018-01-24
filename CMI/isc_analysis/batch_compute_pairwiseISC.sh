@@ -33,7 +33,7 @@ echo Doing ${s1} and ${s2}
 filename=/data/finnes/CMI/isc_analysis/pairwise_iscMaps/${s1}_${s2}_${task}.volResults_errts.fanaticor+tlrc.HEAD
 
 # for making input file to 3dLME
-echo -e "${s1}\t${s2}\t$filename" >> data_SRSn57.txt
+echo -e "${s1}\t${s2}\t$filename" >> data_SRSn68.txt
 
 if [[ -e $filename ]]
 then
