@@ -9,9 +9,9 @@ do
 for task in Movie_Present
 do
 
-3dNetCorr -prefix /data/finnes/CMI/parcellation_analysis/${subj}.${task}.errts.fanaticor \
+3dNetCorr -prefix /data/finnes/CMI/parcellation_analysis/${subj}.${task}.errts.fanaticor.HaskAtlas \
 -inset $top_dir/${subj}.${task}.volResults/errts.${subj}.fanaticor+tlrc.HEAD \
--in_rois /data/finnes/CMI/shen_2mm_268_parcellation_HaskinsPeds+tlrc.HEAD \
+-in_rois /data/finnes/CMI/HaskinsPeds_NL_atlas2.0+tlrc.HEAD \
 -fish_z \
 -ts_out
 
