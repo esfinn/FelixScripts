@@ -1,7 +1,7 @@
 #!/bin/bash
 
 topdir=/data/finnes/CMI/
-regr=RMS-GrayLevels-optFlow-Boy-Dog
+regr_name=optFlow_new
 
 for subj in $@ 
 do
@@ -12,7 +12,7 @@ cd $topdir/preprocessed_data/Movie_Present/${subj}.Movie_Present.volResults/
     -censor censor_${subj}_combined_2.1D                                   \
     -ortvec ROIPC.FSvent.1D ROIPC.FSvent                                     \
     -polort 2 -float                                                       \
-    -num_stimts 17                                                         \
+    -num_stimts 13                                                         \
     -stim_file 1 motion_demean.1D'[0]' -stim_base 1 -stim_label 1 roll_01  \
     -stim_file 2 motion_demean.1D'[1]' -stim_base 2 -stim_label 2 pitch_01 \
     -stim_file 3 motion_demean.1D'[2]' -stim_base 3 -stim_label 3 yaw_01   \
@@ -25,18 +25,16 @@ cd $topdir/preprocessed_data/Movie_Present/${subj}.Movie_Present.volResults/
     -stim_file 10 motion_deriv.1D'[3]' -stim_base 10 -stim_label 10 dS_02  \
     -stim_file 11 motion_deriv.1D'[4]' -stim_base 11 -stim_label 11 dL_02  \
     -stim_file 12 motion_deriv.1D'[5]' -stim_base 12 -stim_label 12 dP_02  \
-    -stim_file 13 $topdir/feature_analysis/mirRMS_conv.txt -stim_label 13 mirRMS \
-    -stim_file 14 $topdir/feature_analysis/meanGrayLevels_conv.txt -stim_label 14 meanGrayLevels \
-    -stim_file 15 $topdir/feature_analysis/optFlow_conv.txt -stim_label 15 optFlow \
-    -stim_file 16 $topdir/feature_analysis/boyManual_conv.txt -stim_label 16 boyManual \
-    -stim_file 17 $topdir/feature_analysis/dogManual_conv.txt -stim_label 17 dogManual \
-    -fout -tout -x1D Xplus${regr}.xmat.1D -xjpeg Xplus${regr}.jpg                                \
-    -x1D_uncensored Xplus${regr}.nocensor.xmat.1D                                     \
-    -fitts fitts.${regr}.${subj}                                                     \
-    -errts errts.${regr}.${subj}                                                   \
-    -bucket stats.${regr}.${subj} \
+    -stim_file 13 $topdir/feature_analysis/optFlow_HRFconv_new.txt -stim_label 13 ${regr_name} \
+    -fout -tout \
+    -x1D Xplus${regr_name}.xmat.1D -xjpeg Xplus${regr_name}.jpg                                \
+    -x1D_uncensored Xplus${regr_name}.nocensor.xmat.1D                                     \
+    -fitts fitts.${regr_name}.${subj}                                                     \
+    -errts errts.${regr_name}.${subj}                                                   \
+    -bucket stats.${regr_name}.${subj} \
     -jobs 12 
 
-rm errts.${regr}.${subj}
-rm fitts.${regr}.${subj}
+rm errts.${regr_name}.${subj}
+rm fitts.${regr_name}.${subj}
+
 done
