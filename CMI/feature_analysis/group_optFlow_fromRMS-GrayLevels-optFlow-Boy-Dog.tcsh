@@ -1,7 +1,8 @@
 # apply any data directories with variables
 set data_dir = /data/finnes/CMI/preprocessed_data/Movie_Present
 
-3dttest++ -prefix group_optFlow_fromRMS-GrayLevels-optFlow-Boy-Dog_wSRSandAgecov                                                           \
+3dttest++ -prefix group_optFlow_fromRMS-GrayLevels-optFlow-Boy-Dog_wSRSandAgecov_MASK                                              \
+	  -mask /data/finnes/CMI/HaskinsPeds_NL_template2.0_mask+tlrc.HEAD \
           -setA setA                                                                                   \
              AN814UPR                                                                                  \
           "$data_dir/NDARAN814UPR.Movie_Present.volResults/stats.RMS-GrayLevels-optFlow-Boy-Dog.NDARAN814UPR+tlrc.HEAD[optFlow#0_Coef]" \
