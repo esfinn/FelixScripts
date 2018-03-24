@@ -1,12 +1,13 @@
 #!/bin/bash
 
-topdir=/data/finnes/CMI/
-regr_name=optFlow
+topdir=/data/finnes/CMI
+datadir=/data/finnes/CMI/preprocessed_data/Movie_Present
+regr_name=anyEmotion_GoogleVis_thr0p25
 
 for subj in $@ 
 do
 
-cd $topdir/preprocessed_data/Movie_Present/${subj}.Movie_Present.volResults/
+cd $datadir/${subj}.Movie_Present.volResults/
 
 3dDeconvolve -input pb03.$subj.r*.blur+tlrc.HEAD                           \
     -censor censor_${subj}_combined_2.1D                                   \
@@ -25,7 +26,7 @@ cd $topdir/preprocessed_data/Movie_Present/${subj}.Movie_Present.volResults/
     -stim_file 10 motion_deriv.1D'[3]' -stim_base 10 -stim_label 10 dS_02  \
     -stim_file 11 motion_deriv.1D'[4]' -stim_base 11 -stim_label 11 dL_02  \
     -stim_file 12 motion_deriv.1D'[5]' -stim_base 12 -stim_label 12 dP_02  \
-    -stim_file 13 $topdir/feature_analysis/optFlow_conv.txt -stim_label 13 ${regr_name} \
+    -stim_file 13 $topdir/feature_analysis/anyEmotion_GoogleVis_thr0p25_conv.txt -stim_label 13 ${regr_name} \
     -fout -tout \
     -x1D Xplus${regr_name}.xmat.1D -xjpeg Xplus${regr_name}.jpg                                \
     -x1D_uncensored Xplus${regr_name}.nocensor.xmat.1D                                     \
