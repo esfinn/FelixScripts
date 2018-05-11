@@ -11,6 +11,8 @@ outdir=/data/CMI_preproc/
 for subj in $@
 do
 
+rm -r $outdir/$task/$subj*
+
 # run afni_proc.py to create a single subject processing script
 afni_proc.py -subj_id $subj                                                 \
         -script /data/finnes/CMI/scripts/afni_proc/procVol.$subj.$task -scr_overwrite                                   \
@@ -23,7 +25,7 @@ afni_proc.py -subj_id $subj                                                 \
                   -anat_follower_ROI FSvent epi /data/finnes/CMI/scripts/freesurfer/$subj/SUMA/FSmask_vent.nii                  \
                   -anat_follower_ROI FSWMe epi /data/finnes/CMI/scripts/freesurfer/$subj/SUMA/FSmask_WM.nii                   \
                   -anat_follower_erode FSvent FSWMe                           \
-        -dsets /data/DSST_dua/CMI/release_2/MRI/sub-${subj}/func/sub-${subj}_task-movieTP_bold.nii.gz        \
+        -dsets /data/DSST_dua/CMI/release_2/MRI/sub-${subj}/func/sub-${subj}_task-movieDM_bold.nii.gz        \
         -tcat_remove_first_trs 0                                            \
 	-align_opts_aea -giant_move 					    \
 	-tlrc_base $topdir/HaskinsPeds_NL_template1.0+tlrc.HEAD             \
